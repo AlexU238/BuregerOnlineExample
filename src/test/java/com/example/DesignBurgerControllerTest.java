@@ -1,5 +1,6 @@
 package com.example;
 
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,17 +14,16 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @RunWith(SpringRunner.class)
 @WebMvcTest()
-public class HomePageControllerTest {
-
+public class DesignBurgerControllerTest {
     @Autowired
     private MockMvc mockMvc;
 
     @Test
-    public void testHomePage() throws Exception {
-        mockMvc.perform(get("/"))
+    public void testDesignPage() throws Exception {
+        mockMvc.perform(get("/design"))
                 .andExpect(status().isOk())
-                .andExpect(view().name("HomePage"))
-                .andExpect(content().string(containsString("This is the homepage")));
+                .andExpect(view().name("DesignPage"))
+                .andExpect(content().string(containsString("Create your burger!")));
     }
 
 }

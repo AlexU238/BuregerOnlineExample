@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Burger Online</title>
+</head>
+<body>
+<h1>Create your burger!</h1>
+<form method="POST" th:object="${design}">
+    <div>
+        <h3>Pick your ingredients:</h3>
+        <th:block th:each="ingredient : ${ingredients}">
+            <input type="checkbox" name="ingredients" th:value="${ingredient.id}"/>
+            <label th:text="${ingredient.name}"></label><br/>
+      </th:block>
+    </div>
+
+
+    <div>
+        <h3>State your name:</h3>
+        <input type="text" th:field="*{name}"/>
+        <button>finish</button>
+    </div>
+
+</form>
+</body>
+</html>
+
+
